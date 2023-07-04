@@ -10,8 +10,8 @@ PS2Dev library: https://github.com/Harvie/ps2dev
 #include "Keyboard.h"
 
 
-//#define AVILLENA_BOARD
-#define BLUEPILL_BOARD
+#define AVILLENA_BOARD
+//#define BLUEPILL_BOARD
 
 #ifdef BLUEPILL_BOARD
 /*

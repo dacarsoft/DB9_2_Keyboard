@@ -22,10 +22,10 @@
 // Delay between bytes
 // I've found i need at least 400us to get this working at all,
 // but even more is needed for reliability, so i've put 1000us
-#define BYTEWAIT 500
+#define BYTEWAIT 600
 
 // Timeout if computer not sending for 30ms
-#define TIMEOUT 300
+#define TIMEOUT 30
 
 
 
@@ -61,7 +61,7 @@ void PS2dev::golo(int pin)
 
 int PS2dev::write(unsigned char data)
 {
-  delayMicroseconds(BYTEWAIT);
+  //delayMicroseconds(BYTEWAIT);
 
   unsigned char i;
   unsigned char parity = 1;
@@ -71,6 +71,7 @@ int PS2dev::write(unsigned char data)
   _PS2DBG.println(data,HEX);
 #endif
 
+  /*
   if (digitalRead(_ps2clk) == LOW) {
     return -1;
   }
@@ -78,6 +79,9 @@ int PS2dev::write(unsigned char data)
   if (digitalRead(_ps2data) == LOW) {
     return -2;
   }
+  */
+  
+  while (digitalRead(_ps2clk) == LOW || digitalRead(_ps2data) == LOW) {}
 
   golo(_ps2data);
   delayMicroseconds(CLKHALF);
@@ -214,6 +218,7 @@ int PS2dev::read(unsigned char * value)
   _PS2DBG.print(F(" calculated parity "));
   _PS2DBG.println(received_parity,BIN);
 #endif
+
   if (received_parity == calculated_parity) {
     return 0;
   } else {
@@ -227,12 +232,14 @@ void PS2dev::keyboard_init()
 {
   while(write(0xAA)!=0);
   delay(10);
+  
   return;
 }
 
 void PS2dev::ack()
 {
   while(write(0xFA));
+  
   return;
 }
 
@@ -284,14 +291,17 @@ int PS2dev::keyboard_reply(unsigned char cmd, unsigned char *leds)
   case 0xED: //set/reset LEDs
     ack();
     if(!read(leds)) ack(); //do nothing with the rate
+    
 #ifdef _PS2DBG
     _PS2DBG.print("LEDs: ");
     _PS2DBG.println(*leds, HEX);
     //digitalWrite(LED_BUILTIN, *leds);
 #endif
+    
     return 1;
     break;
   }
+  
   return 0;
 }
 
@@ -301,6 +311,7 @@ int PS2dev::keyboard_handle(unsigned char *leds) {
   {
     if(!read(&c)) return keyboard_reply(c, leds);
   }
+  
   return 0;
 }
 
@@ -310,13 +321,16 @@ int PS2dev::keyboard_mkbrk(unsigned char code)
   write(code);
   write(0xF0);
   write(code);
+  
   return 0;
 }
 
 // Presses one of the non-special characters
 int PS2dev::keyboard_press(unsigned char code)
 {
-  return write(code);
+  write(code);
+  
+  return 0;
 }
 
 // Releases one of the non-special characters
@@ -324,7 +338,7 @@ int PS2dev::keyboard_release(unsigned char code)
 {
   write(0xf0);
   write(code);
-
+  
   return 0;
 }
 
@@ -333,7 +347,7 @@ int PS2dev::keyboard_press_special(unsigned char code)
 {
   write(0xe0);
   write(code);
-
+  
   return 0;
 }
 
@@ -343,7 +357,7 @@ int PS2dev::keyboard_release_special(unsigned char code)
   write(0xe0);
   write(0xf0);
   write(code);
-
+  
   return 0;
 }
 

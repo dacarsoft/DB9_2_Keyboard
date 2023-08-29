@@ -73,7 +73,7 @@ The keymaps can be changed by pressing a direction button (up, down, left, right
 
 **FLASH INSTRUCTIONS:**
 
-Tha Arduino IDE and tools can be used, but to flash easily the firmware in the ATmega 32U4 this DIY keyboard's updater program can be used also by using the HEX file available under the root folder of the project: 
+Tha Arduino IDE and tools can be used, but to flash easily the firmware in the ATmega 32U4 this DIY keyboard's updater program can be used also by using the proper HEX file available under the build/<board_model> folder of the project: 
 
 MAC OS: https://github.com/qmk/qmk_toolbox/releases/download/beta/QMK.Toolbox.app.zip
 

@@ -12,7 +12,8 @@ The USB detection is done in the first seconds from the boot when the ATmega boa
 
 The default map for each joystick to execute the translation from joystick buttons is done according to these sequences:
 
-**DB9 PORT 1 (PS/2)**
+
+**DB9 PORT 1 (PS/2):**
 
 CURSOR UP, CURSOR DOWN, CURSOR LEFT, CURSOR RIGHT, RIGHT ALT, ENTER, ESCAPE, F1, Z, Y, X, M
 
@@ -23,7 +24,7 @@ CURSOR UP, CURSOR DOWN, CURSOR LEFT, CURSOR RIGHT, ZERO, ENTER, ESCAPE, F5, Z, Y
 SEVEN, SIX, FIVE, EIGHT, ZERO, ENTER, ESCAPE, F1, Z, Y, X, M
 
 
-**DB9 PORT 1 (USB)**
+**DB9 PORT 1 (USB):**
 
 CURSOR UP, CURSOR DOWN, CURSOR LEFT, CURSOR RIGHT, ENTER, RIGHT ALT, ESCAPE, F12, Z, Y, X, M
 
@@ -35,7 +36,7 @@ SEVEN, SIX, FIVE, EIGHT, ZERO, ENTER, ESCAPE, F12, Z, Y, X, M
 
 
 
-**DB9 PORT 2 (PS/2)**
+**DB9 PORT 2 (PS/2):**
 
 Q, A, O, P, M, ENTER, ESCAPE, F1, Z, Y, X, C
 
@@ -47,7 +48,7 @@ SEVEN, SIX, FIVE, EIGHT, ZERO, ENTER, ESCAPE, F1, Z, Y, X, M
 
 
 
-**DB9 PORT 2 (USB)**
+**DB9 PORT 2 (USB):**
 
 Q, A, O, P, M, ENTER, ESCAPE, F12, Z, Y, X, C
 
@@ -63,7 +64,7 @@ The keymaps can be changed by pressing a direction button (up, down, left, right
 
 
 
-**ROADMAP**
+**ROADMAP:**
 
 -Code for a little OLED screen connection, showing menu and information is development, the aim is to allow the use of an onscreen virtual keyboard, and also show the current map in use for each keyboard port.
 

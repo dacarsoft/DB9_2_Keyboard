@@ -71,6 +71,17 @@ The keymaps can be changed by pressing a direction button (up, down, left, right
 -The scancodes map will be user-defined and recorded from the own joystick board.
 
 
+**FLASH INSTRUCTIONS:**
 
-Agreements to Antonio Villena (hardware support), Victor Íborra (testing and ideas), David Crespo (testing and protocol info), Armand (testing and ideas)
+Tha Arduino IDE and tools can be used, but to flash easily the firmware in the ATmega 32U4 this DIY keyboard's updater program can be used also by using the HEX file available under the root folder of the project: 
+
+MAC OS: https://github.com/qmk/qmk_toolbox/releases/download/beta/QMK.Toolbox.app.zip
+
+WINDOWS: https://github.com/qmk/qmk_toolbox/releases/download/beta/qmk_toolbox.exe
+
+
+
+**ACKNOWLEDGEMENTS:**
+
+Antonio Villena (hardware support), Victor Íborra (testing and ideas), David Crespo (testing and protocol info), Armand (testing and ideas).
 

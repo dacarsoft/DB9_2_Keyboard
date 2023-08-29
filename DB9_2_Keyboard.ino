@@ -76,17 +76,17 @@ bool USB_AVAILABLE = false;
 const uint8_t DB9_1_TOTALPINS = sizeof(DB9_1_PINS);
 
 const char DB9_1_MAP_PS2[4][12] = { // Keycode PS2 maps for the first controller
-{PS2dev::UP_ARROW, PS2dev::DOWN_ARROW, PS2dev::LEFT_ARROW, PS2dev::RIGHT_ARROW, PS2dev::ENTER, PS2dev::RIGHT_ALT, PS2dev::ESCAPE, PS2dev::F1, PS2dev::Z, PS2dev::Y, PS2dev::X, PS2dev::M},
-{PS2dev::Q, PS2dev::A, PS2dev::O, PS2dev::P, PS2dev::ENTER, PS2dev::M, PS2dev::ESCAPE, PS2dev::F1, PS2dev::Z, PS2dev::Y, PS2dev::X, PS2dev::M},
-{PS2dev::UP_ARROW, PS2dev::DOWN_ARROW, PS2dev::LEFT_ARROW, PS2dev::RIGHT_ARROW, PS2dev::ENTER, PS2dev::ZERO, PS2dev::ESCAPE, PS2dev::F5, PS2dev::Z, PS2dev::Y, PS2dev::X, PS2dev::M},
-{PS2dev::SEVEN, PS2dev::SIX, PS2dev::FIVE, PS2dev::EIGHT, PS2dev::ENTER, PS2dev::ZERO, PS2dev::ESCAPE, PS2dev::F1, PS2dev::Z, PS2dev::Y, PS2dev::X, PS2dev::M}
+{PS2dev::UP_ARROW, PS2dev::DOWN_ARROW, PS2dev::LEFT_ARROW, PS2dev::RIGHT_ARROW, PS2dev::RIGHT_ALT, PS2dev::ENTER, PS2dev::ESCAPE, PS2dev::F1, PS2dev::Z, PS2dev::Y, PS2dev::X, PS2dev::M},
+{PS2dev::Q, PS2dev::A, PS2dev::O, PS2dev::P, PS2dev::M, PS2dev::ENTER, PS2dev::ESCAPE, PS2dev::F1, PS2dev::Z, PS2dev::Y, PS2dev::X, PS2dev::C},
+{PS2dev::UP_ARROW, PS2dev::DOWN_ARROW, PS2dev::LEFT_ARROW, PS2dev::RIGHT_ARROW, PS2dev::ZERO, PS2dev::ENTER, PS2dev::ESCAPE, PS2dev::F5, PS2dev::Z, PS2dev::Y, PS2dev::X, PS2dev::M},
+{PS2dev::SEVEN, PS2dev::SIX, PS2dev::FIVE, PS2dev::EIGHT, PS2dev::ZERO, PS2dev::ENTER, PS2dev::ESCAPE, PS2dev::F1, PS2dev::Z, PS2dev::Y, PS2dev::X, PS2dev::M}
 };
 
 const char DB9_1_MAP_USB[4][12] = { // Keycode USB maps for the first controller
 {KEY_UP_ARROW, KEY_DOWN_ARROW, KEY_LEFT_ARROW, KEY_RIGHT_ARROW, KEY_RETURN, KEY_RIGHT_ALT, KEY_ESC, KEY_F12, 'z', 'y', 'x', 'm'},
-{'q', 'a', 'o', 'p', KEY_RETURN, 'm', KEY_ESC, KEY_F12, 'z', 'y', 'x', 'm'},
+{'q', 'a', 'o', 'p', 'm', KEY_RETURN, KEY_ESC, KEY_F12, 'z', 'y', 'x', 'c'},
 {KEY_UP_ARROW, KEY_DOWN_ARROW, KEY_LEFT_ARROW, KEY_RIGHT_ARROW, KEY_RETURN, '0', KEY_ESC, KEY_F5, 'z', 'y', 'x', 'm'},
-{'7', '6', '5', '8', KEY_RETURN, '0', KEY_ESC, KEY_F12, 'z', 'y', 'x', 'm'}
+{'7', '6', '5', '8', '0', KEY_RETURN, KEY_ESC, KEY_F12, 'z', 'y', 'x', 'm'}
 };
 
 uint8_t DB9_1_MAP_ACTIVE = 0;
@@ -97,17 +97,17 @@ uint8_t DB9_1_STATUS[12] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 const uint8_t DB9_2_TOTALPINS = sizeof(DB9_2_PINS);
 
 const char DB9_2_MAP_PS2[4][12] = { // Keycode PS2 maps for the second controller
-{PS2dev::Q, PS2dev::A, PS2dev::O, PS2dev::P, PS2dev::ENTER, PS2dev::M, PS2dev::ESCAPE, PS2dev::F1, PS2dev::Z, PS2dev::Y, PS2dev::X, PS2dev::M},
-{PS2dev::UP_ARROW, PS2dev::DOWN_ARROW, PS2dev::LEFT_ARROW, PS2dev::RIGHT_ARROW, PS2dev::ENTER, PS2dev::RIGHT_ALT, PS2dev::ESCAPE, PS2dev::F1, PS2dev::Z, PS2dev::Y, PS2dev::X, PS2dev::M},
-{PS2dev::UP_ARROW, PS2dev::DOWN_ARROW, PS2dev::LEFT_ARROW, PS2dev::RIGHT_ARROW, PS2dev::ENTER, PS2dev::ZERO, PS2dev::ESCAPE, PS2dev::F5, PS2dev::Z, PS2dev::Y, PS2dev::X, PS2dev::M},
-{PS2dev::SEVEN, PS2dev::SIX, PS2dev::FIVE, PS2dev::EIGHT, PS2dev::ENTER, PS2dev::ZERO, PS2dev::ESCAPE, PS2dev::F1, PS2dev::Z, PS2dev::Y, PS2dev::X, PS2dev::M}
+{PS2dev::Q, PS2dev::A, PS2dev::O, PS2dev::P, PS2dev::M, PS2dev::ENTER, PS2dev::ESCAPE, PS2dev::F1, PS2dev::Z, PS2dev::Y, PS2dev::X, PS2dev::C},
+{PS2dev::UP_ARROW, PS2dev::DOWN_ARROW, PS2dev::LEFT_ARROW, PS2dev::RIGHT_ARROW, PS2dev::RIGHT_ALT, PS2dev::ENTER, PS2dev::ESCAPE, PS2dev::F1, PS2dev::Z, PS2dev::Y, PS2dev::X, PS2dev::M},
+{PS2dev::UP_ARROW, PS2dev::DOWN_ARROW, PS2dev::LEFT_ARROW, PS2dev::RIGHT_ARROW, PS2dev::ZERO, PS2dev::ENTER, PS2dev::ESCAPE, PS2dev::F5, PS2dev::Z, PS2dev::Y, PS2dev::X, PS2dev::M},
+{PS2dev::SEVEN, PS2dev::SIX, PS2dev::FIVE, PS2dev::EIGHT, PS2dev::ZERO, PS2dev::ENTER, PS2dev::ESCAPE, PS2dev::F1, PS2dev::Z, PS2dev::Y, PS2dev::X, PS2dev::M}
 };
 
 const char DB9_2_MAP_USB[4][12] = { // Keycode USB maps for the first controller
-{'q', 'a', 'o', 'p', KEY_RETURN, 'm', KEY_ESC, KEY_F12, 'z', 'y', 'x', 'm'},
+{'q', 'a', 'o', 'p', 'm', KEY_RETURN, KEY_ESC, KEY_F12, 'z', 'y', 'x', 'c'},
 {KEY_UP_ARROW, KEY_DOWN_ARROW, KEY_LEFT_ARROW, KEY_RIGHT_ARROW, KEY_RETURN, KEY_RIGHT_ALT, KEY_ESC, KEY_F12, 'z', 'y', 'x', 'm'},
 {KEY_UP_ARROW, KEY_DOWN_ARROW, KEY_LEFT_ARROW, KEY_RIGHT_ARROW, KEY_RETURN, '0', KEY_ESC, KEY_F5, 'z', 'y', 'x', 'm'},
-{'7', '6', '5', '8', KEY_RETURN, '0', KEY_ESC, KEY_F12, 'z', 'y', 'x', 'm'}
+{'7', '6', '5', '8', '0', KEY_RETURN, KEY_ESC, KEY_F12, 'z', 'y', 'x', 'm'}
 };
 
 uint8_t DB9_2_MAP_ACTIVE = 0;

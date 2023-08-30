@@ -2,13 +2,13 @@
 Converts DB9 joysticks button presses to keyboard scancodes
 
 
-This project aims to translate joysticks/pads button presses to keyboard presses by using specifically designed for this purpose boards like the one from Antonio Villena's (see https://antoniovillena.es/store and search for DB9 to keyboard adapter) and also generic ATmega 32U4 boards like Arduino Pro Micro, Arduino Leonardo (for this boards it is needed to change the "#define" wrote in the first lines of the ".ino" file, and may be the desired GPIO pins assignments).
+This project aims to translate joysticks/pads button presses to keyboard presses by using specifically designed for this purpose boards like the one from Antonio Villena (see https://antoniovillena.es/store and search for DB9 to keyboard adapter) and also generic ATmega 32U4 boards like Arduino Pro Micro, Arduino Leonardo (for this boards it is needed to change the "#define" wrote in the first lines of the ".ino" file, and may be the desired GPIO pins assignments).
 
 This translation is a big help for those emulators like ESPectrum (code https://github.com/EremusOne/ZX-ESPectrum-IDF , board and rubber key case also available from https://antoniovillena.es/store/product/espectrum) and FPGA boards like MiSTer which doesn't have joystick connector support, but also to allow the use and management of computer cores running inside FPGAs when a keyboard permanently connected is not desired.
 
-The code sends keystrokes when a button is pressed on a Joystick. Two simulatenous joysticks are supported. PS/2 and USB keyboard scancodes are sent. The supported joysticks are standard one-two buttons joysticks, Sega three buttons joysticks and Sega 6 buttons joysticks.
+The code sends keystrokes when a button is pressed on a joystick. Two simulatenous joysticks are supported. PS/2 and USB keyboard scancodes are sent. The supported joysticks are standard one-two buttons joysticks, Sega three buttons joysticks and Sega 6 buttons joysticks.
 
-The USB detection is done in the first seconds from the boot when the ATmega board is connected to a USB or PS/2 port and powered up. If the board is permantly connected to a computer like PC or Raspberry Pi probably the USB detection will fail as the host device is not ready to communicate with the board during the first seconds before timeout, when this happens the board must be disconnected and reconnected to the USB port.
+The USB detection is done in the first seconds from the boot when the ATmega board is connected to a USB or PS/2 port and powered up. If the board is permantly connected to a computer like PC or Raspberry Pi probably the USB detection will fail if the board is powered up at the same time as the host computer because the computer is not ready to communicate at boot with the board during the first seconds before the board detection timeout reaches its limit, when this happens the board must be disconnected and reconnected to the USB port once the computer is ready to manage USB devices detection.
 
 The default map for each joystick to execute the translation from joystick buttons is done according to these sequences:
 

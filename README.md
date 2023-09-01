@@ -2,7 +2,7 @@
 Converts DB9 joysticks button presses to keyboard scancodes
 
 
-This project aims to translate joysticks/pads button presses to keyboard presses by using specifically designed for this purpose boards like the one from Antonio Villena (see https://antoniovillena.es/store and search for DB9 to keyboard adapter) and also generic ATmega 32U4 boards like Arduino Pro Micro, Arduino Leonardo (for this boards it is needed to change the "#define" wrote in the first lines of the ".ino" file, and may be the desired GPIO pins assignments).
+This project aims to translate joysticks/pads button presses to keyboard presses by using specifically designed for this purpose boards like the one from Antonio Villena (see https://antoniovillena.es/store/product/espjoy-for-espectrum for DB9 to keyboard adapter) and also generic ATmega 32U4 boards like Arduino Pro Micro or Arduino Leonardo (for this boards it is needed to change the "#define" wrote in the first lines of the ".ino" file, and may be the desired GPIO pins assignments).
 
 This translation is a big help for those emulators like ESPectrum (code https://github.com/EremusOne/ZX-ESPectrum-IDF , board and rubber key case also available from https://antoniovillena.es/store/product/espectrum) and FPGA boards like MiSTer which doesn't have joystick connector support, but also to allow the use and management of computer cores running inside FPGAs when a keyboard permanently connected is not desired.
 
@@ -83,5 +83,5 @@ WINDOWS: https://github.com/qmk/qmk_toolbox/releases/download/beta/qmk_toolbox.e
 
 **ACKNOWLEDGEMENTS:**
 
-Antonio Villena (hardware support), Victor Íborra (testing and ideas), David Crespo (testing and protocol info), Armand (testing and ideas).
+Antonio Villena (hardware support), Haplo (hardware loan), Victor Íborra (testing and ideas), David Crespo (testing and protocol info), Armand (testing and ideas).
 

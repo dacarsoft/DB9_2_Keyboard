@@ -83,5 +83,5 @@ WINDOWS: https://github.com/qmk/qmk_toolbox/releases/download/beta/qmk_toolbox.e
 
 **ACKNOWLEDGEMENTS:**
 
-Antonio Villena (hardware support), Haplo (hardware loan), Victor Íborra (testing and ideas), David Crespo (testing and protocol info), Armand (testing and ideas).
+Antonio Villena (hardware support), Haplo (hardware loan), Víctor Iborra (testing and ideas), David Crespo (testing and protocol info), Armand (testing and ideas).
 

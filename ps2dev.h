@@ -152,6 +152,37 @@ class PS2dev
       WAKE = 0x63
     };
 
+    // Enum containing all of the ESPectrum special keycodes/scancodes
+    // All press transmissions using these are preceded with 0xE2
+    // All release transmissions using these are preceded with 0xE2, 0xF0
+    enum ESPectrumSpecialScanCodes
+    {
+      ESP_JOY1LEFT = 0x40,
+      ESP_JOY1RIGHT = 0x41,
+      ESP_JOY1UP = 0x42,
+      ESP_JOY1DOWN = 0x43,
+      ESP_JOY1START = 0x44,
+      ESP_JOY1MODE = 0x45,
+      ESP_JOY1A = 0x46,
+      ESP_JOY1B = 0x47,
+      ESP_JOY1C = 0x48,
+      ESP_JOY1X = 0x49,
+      ESP_JOY1Y = 0x4a,
+      ESP_JOY1Z = 0x4b,
+      ESP_JOY2LEFT = 0x4c,
+      ESP_JOY2RIGHT = 0x4d,
+      ESP_JOY2UP = 0x4e,
+      ESP_JOY2DOWN = 0x4f,
+      ESP_JOY2START = 0x50,
+      ESP_JOY2MODE = 0x51,
+      ESP_JOY2A = 0x52,
+      ESP_JOY2B = 0x53,
+      ESP_JOY2C = 0x54,
+      ESP_JOY2X = 0x55,
+      ESP_JOY2Y = 0x56,
+      ESP_JOY2Z = 0x57
+    };
+
     int write(unsigned char data);
     int read(unsigned char * data);
     int available();
@@ -160,6 +191,8 @@ class PS2dev
     int keyboard_release(unsigned char code);
     int keyboard_press_special(unsigned char code);
     int keyboard_release_special(unsigned char code);
+    int keyboard_press_ESPectrum_special(unsigned char code);
+    int keyboard_release_ESPectrum_special(unsigned char code);
     int keyboard_press_printscreen();
     int keyboard_release_printscreen();
     int keyboard_mkbrk_printscreen();
@@ -168,6 +201,7 @@ class PS2dev
     int keyboard_handle(unsigned char *leds);
     int keyboard_mkbrk(unsigned char code);
     int keyboard_special_mkbrk(unsigned char code);
+    int keyboard_ESPectrum_special_mkbrk(unsigned char code);    
   private:
     int _ps2clk;
     int _ps2data;

@@ -373,6 +373,37 @@ int PS2dev::keyboard_special_mkbrk(unsigned char code)
   return 0;
 }
 
+// Presses one of the ESPectrum special characters
+int PS2dev::keyboard_press_ESPectrum_special(unsigned char code)
+{
+  write(0xe2);
+  write(code);
+  
+  return 0;
+}
+
+// Releases one of the ESPectrum special characters
+int PS2dev::keyboard_release_ESPectrum_special(unsigned char code)
+{
+  write(0xe2);
+  write(0xf0);
+  write(code);
+  
+  return 0;
+}
+
+// Presses then releases one of the ESPectrum special characters
+int PS2dev::keyboard_ESPectrum_special_mkbrk(unsigned char code)
+{
+  write(0xe2);
+  write(code);
+  write(0xe2);
+  write(0xf0);
+  write(code);
+
+  return 0;
+}
+
 // Presses Printscreen
 int PS2dev::keyboard_press_printscreen()
 {

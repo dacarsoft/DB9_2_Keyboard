@@ -1,5 +1,7 @@
 # DB9_2_Keyboard
-Converts DB9 joysticks button presses to keyboard scancodes
+By David Carrión - 2023, 2024
+
+Converts DB9 joysticks button presses to keyboard scancodes, now with OLED screen features like onscreen keyboard
 
 
 This project aims to translate joysticks/pads button presses to keyboard presses by using specifically designed for this purpose boards like the one from Antonio Villena (see https://antoniovillena.es/store/product/espjoy-for-espectrum for DB9 to keyboard adapter) and also generic ATmega 32U4 boards like Arduino Pro Micro or Arduino Leonardo (for this boards it is needed to change the "#define" wrote in the first lines of the ".ino" file, and may be the desired GPIO pins assignments).
@@ -66,7 +68,7 @@ The keymaps can be changed by pressing a direction button (up, down, left, right
 
 **ROADMAP:**
 
--Code for a little OLED screen connection, showing menu and information is development, the aim is to allow the use of an onscreen virtual keyboard, and also show the current map in use for each keyboard port.
+-Code for a little OLED screen connection, showing menu and information is development, the aim is to allow the use of an onscreen virtual keyboard, and also show the current map in use for each keyboard port (done and available now, pending some features)
 
 -The scancodes map will be user-defined and recorded from the own joystick board.
 
